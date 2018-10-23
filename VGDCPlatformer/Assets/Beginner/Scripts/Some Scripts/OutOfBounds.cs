@@ -17,15 +17,10 @@ public class OutOfBounds : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
-
-    private void FixedUpdate()
-    {
-        if (transform.position.y < OoB)
+		if (transform.position.y < OoB)
         {
             transform.position = RespawnPointx.transform.position;
             HealthScript.HP -= 20;
-        }
+	    }
     }
 }

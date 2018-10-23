@@ -13,10 +13,12 @@ public class Moving : MonoBehaviour {
     public Animator anim;
     private SpriteRenderer sr;
     public LayerMask GroundLayer;
+    public bool FaceRight;
 
 	// Use this for initialization
 	void Start ()
     {
+        FaceRight = true;
         PlayerBox = GetComponent<BoxCollider2D>();
         anim = gameObject.GetComponent<Animator>(); 
         sr = GetComponent<SpriteRenderer>();
@@ -29,25 +31,32 @@ public class Moving : MonoBehaviour {
         float HorizontalInput = Input.GetAxisRaw("Horizontal");
         if (HorizontalInput != 0)
         {
+            //This flips the player model depending on the direction they are going
             if (HorizontalInput == 1)
             {
                 sr.flipX = false;
+                FaceRight = true;
             }
             else
             {
                 sr.flipX = true;
+                FaceRight = false;
             }
             HorizontalMove = HorizontalInput * RunSpeed;
+            //This causes the running animation to play
             anim.SetBool("running", true);
         }
         else
         {
+            //This causes the running animation to stop
             anim.SetBool("running", false);
+            //This removes all momentum
             HorizontalMove = 0;
         }
 
         if (m_RigidBody2D.velocity.y != 0)
         {
+            //This causes the jumping animation to play
             anim.SetBool("jumping", true);
         }
 
@@ -63,6 +72,7 @@ public class Moving : MonoBehaviour {
         }
         else if (IsGrounded())
         {
+            //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
         }
     }
@@ -75,17 +85,21 @@ public class Moving : MonoBehaviour {
 
     bool IsGrounded()
     {
+        //Uses the boundaries of the player box collider to spawn the ray start locations'''
         Vector2 StartPosition1 = PlayerBox.bounds.center - PlayerBox.bounds.extents;
         Vector2 StartPosition2 = PlayerBox.bounds.center + new Vector3(PlayerBox.bounds.extents.x, -PlayerBox.bounds.extents.y, 0);
-        //Vector2 StartPosition1 = new Vector2 (LeftBound.x, LeftBound.y);
-        //Vector2 StartPosition2 = new Vector2 (RightBound.x, RightBound.y);
+            //Vector2 StartPosition1 = new Vector2 (LeftBound.x, LeftBound.y);
+            //Vector2 StartPosition2 = new Vector2 (RightBound.x, RightBound.y);
         Vector2 Direction = Vector2.down;
+        //Distance of ray
         float Distance = .15f;
         Debug.DrawRay(StartPosition1, Distance * Direction, Color.red);
         Debug.DrawRay(StartPosition2, Distance * Direction, Color.red);
+        //Checks to see if it collided with an object in the ground layer
         RaycastHit2D hitground1 = Physics2D.Raycast(StartPosition1, Direction, Distance, GroundLayer);
         RaycastHit2D hitground2 = Physics2D.Raycast(StartPosition2, Direction, Distance, GroundLayer);
-        //Debug.Log(hitground1.collider.name);
+            //Debug.Log(hitground1.collider.name);
+        //if it is colliding with something, returns true
         if (hitground1.collider || hitground2.collider != null)
         {
          //   Debug.Log(hitground1.collider.name);
