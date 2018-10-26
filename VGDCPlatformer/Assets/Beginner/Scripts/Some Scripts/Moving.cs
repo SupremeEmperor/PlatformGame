@@ -68,28 +68,28 @@ public class Moving : MonoBehaviour {
             //At higher jumpforce values the player takes 0 more frames to get off the ground so the 
             //raycast doesnt reset the counter. I'll see if I can fix this later or something.
             //A JUMP FORCE GREATER THAN 323 BREAKS THIS
-            //This also breaks if the ground isnt flat. Def needs to be fixed ASAP
+            //This also breaks if the ground isnt flat. Def needs to be fixed ASAPg
             //Ground check via raycast
             if (IsGrounded())
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
-                numJumps -= 1;
+                //numJumps -= 1;
             }
-            else if (/*IsGrounded()*/numJumps > 0)
+           /* else if (/*IsGrounded()*//*numJumps > 0)
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
                 numJumps -= 1;
-            }
+            }*/
         }
         else if (IsGrounded())
         {
             //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
-            numJumps = 1;
+            //numJumps = 1;
         }
     }
     void FixedUpdate()
