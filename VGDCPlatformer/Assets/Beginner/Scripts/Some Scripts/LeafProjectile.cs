@@ -10,11 +10,11 @@ public class LeafProjectile : MonoBehaviour
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
-
+    private Health HealthScript;
     // Use this for initialization
     void Start()
     {
-        //NEEDS FIX ASAP
+        
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
         leaf = GetComponent<GameObject>();
         hitbox = gameObject.GetComponent<BoxCollider2D>();
@@ -32,10 +32,21 @@ public class LeafProjectile : MonoBehaviour
     }
     */
 
-        //I HAVE NO IDEA HOW THIS WORKS ILL FIX IT LATER
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("k");
-        Destroy(leaf);
+        if (other.gameObject.tag == "hitbox")
+        {
+            try
+            {
+                Health hp = other.gameObject.GetComponent<Health>();
+                hp.HP -= 20;
+            }
+            catch
+            {
+
+            }
+        }
+            //Debug.Log("k");
+        Destroy(gameObject);
     }
 }

@@ -14,6 +14,7 @@ public class Moving : MonoBehaviour {
     private SpriteRenderer sr;
     public LayerMask GroundLayer;
     public bool FaceRight;
+    public int numJumps;
 
 	// Use this for initialization
 	void Start ()
@@ -63,17 +64,26 @@ public class Moving : MonoBehaviour {
         if (Input.GetButtonDown("Jump"))
         {
             //Ground check via raycast
-            if (IsGrounded())
+            if (/*IsGrounded()*/numJumps > 1)
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+                numJumps -= 1;
+            }
+            else if (/*IsGrounded()*/numJumps > 0)
+            {
+                //anim.SetBool("jumping", true);
+                m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
+                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+                numJumps -= 1;
             }
         }
         else if (IsGrounded())
         {
             //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
+            numJumps = 2;
         }
     }
     void FixedUpdate()

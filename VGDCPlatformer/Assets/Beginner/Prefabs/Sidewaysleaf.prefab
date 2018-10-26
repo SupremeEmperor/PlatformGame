@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212213216058296812}
   - component: {fileID: 70087668552522614}
   - component: {fileID: 50719165950155534}
+  - component: {fileID: 114544897472609304}
   m_Layer: 0
   m_Name: Sidewaysleaf
   m_TagString: Untagged
@@ -77,6 +78,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0002390154, y: 0.00498039}
   m_Size: {x: 0.102176085, y: 0.04977468}
   m_Direction: 1
+--- !u!114 &114544897472609304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621398608227490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e48fc418764e7248a7c0103a1ac5118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212213216058296812
 SpriteRenderer:
   m_ObjectHideFlags: 1
