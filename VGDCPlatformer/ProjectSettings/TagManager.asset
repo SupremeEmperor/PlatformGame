@@ -9,6 +9,7 @@ TagManager:
   - floor
   - environment
   - checkPoint
+  - Gizmos
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Ground
   - Wall
-  - 
+  - Player
   - 
   - 
   - 

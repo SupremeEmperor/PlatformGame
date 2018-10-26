@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moving : MonoBehaviour {
-
+public class Moving : MonoBehaviour
+{
     private BoxCollider2D PlayerBox;
     private Vector3 m_Velocity;//stores speed of char
     public Rigidbody2D m_RigidBody2D;
@@ -63,37 +63,33 @@ public class Moving : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
-            //Possible problem: currently double jump works because the jumpforce is low enough that 
-            //the player takes 1 more frame to get off the ground allowing for the jump counter to reset.
-            //At higher jumpforce values the player takes 0 more frames to get off the ground so the 
-            //raycast doesnt reset the counter. I'll see if I can fix this later or something.
-            //A JUMP FORCE GREATER THAN 323 BREAKS THIS
-            //This also breaks if the ground isnt flat. Def needs to be fixed ASAPg
+            //Double jump works by having a variable that counts down everytime the player jumps. 
+            //If you have a better method, go ahead and implement it.
             //Ground check via raycast
             if (IsGrounded())
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
-                //numJumps -= 1;
+                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));               
             }
-           /* else if (/*IsGrounded()*//*numJumps > 0)
+            else if (/*IsGrounded()*/numJumps > 0)
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
                 numJumps -= 1;
-            }*/
+            }
         }
         else if (IsGrounded())
         {
             //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
-            //numJumps = 1;
+            numJumps = 1;
         }
     }
     void FixedUpdate()
     {
+        //sets the movement of character
         Vector3 targetVelocity = new Vector2(HorizontalMove * RunSpeed * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
        // Debug.Log(m_RigidBody2D.velocity);

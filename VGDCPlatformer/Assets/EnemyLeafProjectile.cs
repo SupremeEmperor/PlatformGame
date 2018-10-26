@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeafProjectile : MonoBehaviour
+public class EnemyLeafProjectile : MonoBehaviour
 {
     //private Rigidbody2D WeaponRigidBody;
-    private GameObject leaf;
-    private BoxCollider2D hitbox;
+    private GameObject Enemyleaf;
+    private BoxCollider2D Enemyhitbox;
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
@@ -14,21 +14,21 @@ public class LeafProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
-        leaf = GetComponent<GameObject>();
-        hitbox = gameObject.GetComponent<BoxCollider2D>();
+        Enemyleaf = GetComponent<GameObject>();
+        Enemyhitbox = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "hitbox")
+        if (other.gameObject.tag == "Player")
         {
             try
             {
@@ -41,7 +41,7 @@ public class LeafProjectile : MonoBehaviour
             }
         }
         Debug.Log("k"); //Just for debugging
-        if (other.gameObject.tag != "checkPoint" || other.gameObject.tag != "Gizmos")
+        if (other.gameObject.tag != "checkPoint" || other.gameObject.tag != "Gizmos" || other.gameObject.tag != "hitbox")
         {
             Destroy(gameObject);
         }

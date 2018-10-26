@@ -36,6 +36,7 @@ public class TheEnemy : MonoBehaviour {
 	}
 
     //Destroys the GameObject
+    //Pretty sure this is redundant. Nvm, apparently it isnt
 	public void Die()
 	{
 		Destroy(parent);
