@@ -63,8 +63,14 @@ public class Moving : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
+            //Possible problem: currently double jump works because the jumpforce is low enough that 
+            //the player takes 1 more frame to get off the ground allowing for the jump counter to reset.
+            //At higher jumpforce values the player takes 0 more frames to get off the ground so the 
+            //raycast doesnt reset the counter. I'll see if I can fix this later or something.
+            //A JUMP FORCE GREATER THAN 323 BREAKS THIS
+            //This also breaks if the ground isnt flat. Def needs to be fixed ASAP
             //Ground check via raycast
-            if (/*IsGrounded()*/numJumps > 1)
+            if (IsGrounded())
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
@@ -75,7 +81,7 @@ public class Moving : MonoBehaviour {
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
                 numJumps -= 1;
             }
         }
@@ -83,7 +89,7 @@ public class Moving : MonoBehaviour {
         {
             //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
-            numJumps = 2;
+            numJumps = 1;
         }
     }
     void FixedUpdate()
