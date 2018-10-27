@@ -15,8 +15,8 @@ public class TheEnemy : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {	
 		if (moveRight == true)
 		{
 			transform.Translate(Vector2.right * movSpeed * Time.deltaTime);
@@ -43,11 +43,15 @@ public class TheEnemy : MonoBehaviour {
 	}
 
     //flips the entire gameObject and its components
-    void Flip()
+    public void Flip()
     {
+        print("k");
         moveRight = !moveRight;
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+
+
 }
