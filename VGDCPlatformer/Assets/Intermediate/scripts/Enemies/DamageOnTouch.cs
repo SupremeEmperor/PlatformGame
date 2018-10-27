@@ -2,25 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageOnTouch : MonoBehaviour {
+public class DamageOnTouch : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    public void OnTriggerEnter2D(Collider2D collision)
+    // Use this for initialization
+    void Start()
     {
-        //if this object touches an enemy's hurtbox
-        if (collision.gameObject.tag == "hurtbox")
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        //This should work, but it really doesnt.
+        if (other.gameObject.tag == "floor")
         {
-            //to kill enemy, we call enemy script Die() function to kill object
-            TheEnemy script = collision.gameObject.GetComponentInParent<TheEnemy>();
-            script.Die();
+            Destroy(gameObject);
+        }
+        //if this object touches an enemy's hurtbox
+        if (other.gameObject.tag == "Player")
+        {
+            try
+            {
+                Health hp = other.gameObject.GetComponent<Health>();
+                hp.HP -= 40;
+            }
+            catch
+            {
+
+            }
         }
     }
 }
