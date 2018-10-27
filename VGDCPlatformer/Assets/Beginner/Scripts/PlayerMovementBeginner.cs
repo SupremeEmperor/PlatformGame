@@ -22,6 +22,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     public LayerMask m_GroundLayer;
 
 
+
     // Use this for initialization
     void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
+
     }
 
     // FixedUpdate is called multiple times per frame at different rates
@@ -49,5 +51,10 @@ public class PlayerMovementBeginner : MonoBehaviour {
         m_RigidBody2D.velocity = targetVelocity;
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+    }
+
+    public void multSpeed(float mul)
+    {
+        runSpeed = runSpeed * mul;
     }
 }
