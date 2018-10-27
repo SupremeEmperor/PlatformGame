@@ -6,7 +6,7 @@ public class EnemyLeafProjectile : MonoBehaviour
 {
     //private Rigidbody2D WeaponRigidBody;
     private GameObject Enemyleaf;
-    private BoxCollider2D Enemyhitbox;
+    private CircleCollider2D Enemyhitbox;
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
@@ -17,7 +17,7 @@ public class EnemyLeafProjectile : MonoBehaviour
 
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
         Enemyleaf = GetComponent<GameObject>();
-        Enemyhitbox = gameObject.GetComponent<BoxCollider2D>();
+        Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -40,10 +40,15 @@ public class EnemyLeafProjectile : MonoBehaviour
 
             }
         }
-        Debug.Log("k"); //Just for debugging
-        if (other.gameObject.tag != "checkPoint" || other.gameObject.tag != "Gizmos" || other.gameObject.tag != "hitbox")
+        //Debug.Log("k"); //Just for debugging
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "floor")
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
