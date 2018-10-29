@@ -13,7 +13,6 @@ public class TriggerFall : MonoBehaviour {
         {
             Rigidbody2D rb= gameObject.GetComponentInChildren<Rigidbody2D>();
             rb.isKinematic = false; //changing Body Type to Dynamic to allow gravity
-            Destroy(gameObject, 2f); //then destroy after no longer needed
         }
     }
 }
