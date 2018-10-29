@@ -14,6 +14,6 @@ public class SlowDown : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        other.multSpeed(2f);
+        other.multSpeed(4f);
     }
 }

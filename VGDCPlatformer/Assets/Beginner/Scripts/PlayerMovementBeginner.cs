@@ -55,6 +55,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
 
     public void multSpeed(float mul)
     {
+        Debug.Log("yes");
         runSpeed = runSpeed * mul;
     }
 }
