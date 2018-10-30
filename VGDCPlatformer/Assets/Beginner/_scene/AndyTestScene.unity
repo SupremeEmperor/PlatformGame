@@ -25261,3 +25261,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4695413590998284, guid: 5f6dd68b60f3e1b45ae935e2d8c28799,
     type: 2}
   m_PrefabInternal: {fileID: 2134844915}
+--- !u!1 &2136808038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1621370096760718, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
+    type: 2}
+  m_PrefabInternal: {fileID: 281548365}
+--- !u!114 &2136808039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136808038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e62f0b6db3f56849b5256bfc76fd390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDirection: {fileID: 0}
+  ThrowingWeapon1: {fileID: 1779941086}
+  ThrowingWeapon2: {fileID: 1962979218}
