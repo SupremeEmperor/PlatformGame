@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 70087668552522614}
   - component: {fileID: 50719165950155534}
   - component: {fileID: 114552562369868114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidewaysleafEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 0
 --- !u!70 &70087668552522614
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0002390154, y: 0.00498039}
