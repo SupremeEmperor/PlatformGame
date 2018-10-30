@@ -22,11 +22,12 @@ GameObject:
   - component: {fileID: 212369630212577564}
   - component: {fileID: 61746751371726104}
   - component: {fileID: 50433344342545030}
-  - component: {fileID: 114305272443144458}
   - component: {fileID: 70006916329683000}
   - component: {fileID: 95561962313105130}
+  - component: {fileID: 114305272443144458}
   - component: {fileID: 114904675697392354}
   - component: {fileID: 114082559690646862}
+  - component: {fileID: 114725389659197318}
   m_Layer: 0
   m_Name: PlayerSprite 1
   m_TagString: Untagged
@@ -157,6 +158,25 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256
+  FaceRight: 0
+  numJumps: 0
+--- !u!114 &114725389659197318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669469289110688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e62f0b6db3f56849b5256bfc76fd390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDirection: {fileID: 114305272443144458}
+  ThrowingWeapon1: {fileID: 1621398608227490, guid: 9dfce7b1ab857b649be0ea891d2a9efa,
+    type: 2}
+  ThrowingWeapon2: {fileID: 1509675172563538, guid: 1820c66c26a1c4db6ba09eb6ee992c92,
+    type: 2}
+  Weapon: 
 --- !u!114 &114904675697392354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,8 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OoB: -10
-  RespawnPointx: 0
-  RespawnPointy: 1
+  RespawnPointx: {fileID: 0}
   HealthScript: {fileID: 114082559690646862}
 --- !u!212 &212369630212577564
 SpriteRenderer:
