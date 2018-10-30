@@ -20,11 +20,15 @@ public class PlayerMovementBeginner : MonoBehaviour {
     private bool m_Grounded;
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
+    private int extraJumps;
+    public int extraJumpsValue;
+
+
     // Use this for initialization
     void Start()
     {
         //m_RigidBody2D = GetComponent<Rigidbody2D>(); //Instead of manually putting the RigidBody2D Component we can get the component from the Object
-
+        extraJumps = extraJumpsValue;
         m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
     }
 
@@ -33,11 +37,22 @@ public class PlayerMovementBeginner : MonoBehaviour {
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (m_Grounded && Input.GetButtonDown("Jump"))
+        if (m_Grounded == true)
         {
-            m_Grounded = false;
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            extraJumps = extraJumpsValue;
         }
+
+        if (Input.GetButtonDown("Jump") && extraJumps > 0)
+        {
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            --extraJumps;
+        } else if (Input.GetButton("Jump") && extraJumps == 0 && m_Grounded)
+        {
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            m_Grounded = false;
+        }
+
+
     }
 
     // FixedUpdate is called multiple times per frame at different rates
