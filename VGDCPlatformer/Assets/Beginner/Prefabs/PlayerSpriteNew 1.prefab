@@ -204,7 +204,9 @@ MonoBehaviour:
   PlayerDirection: {fileID: 114015203627530288}
   ThrowingWeapon1: {fileID: 1621398608227490, guid: 9dfce7b1ab857b649be0ea891d2a9efa,
     type: 2}
-  ThrowingWeapon2: {fileID: 0}
+  ThrowingWeapon2: {fileID: 1509675172563538, guid: 1820c66c26a1c4db6ba09eb6ee992c92,
+    type: 2}
+  Weapon: 
 --- !u!212 &212214979259403364
 SpriteRenderer:
   m_ObjectHideFlags: 1
