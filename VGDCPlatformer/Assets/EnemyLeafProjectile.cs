@@ -26,7 +26,7 @@ public class EnemyLeafProjectile : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -45,7 +45,7 @@ public class EnemyLeafProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     void OnBecameInvisible()
     {

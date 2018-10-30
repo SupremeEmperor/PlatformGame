@@ -15,6 +15,7 @@ public class Moving : MonoBehaviour
     public LayerMask GroundLayer;
     public bool FaceRight;
     public int numJumps;
+    private bool isGrounded;
 
 	// Use this for initialization
 	void Start ()
@@ -66,7 +67,7 @@ public class Moving : MonoBehaviour
             //Double jump works by having a variable that counts down everytime the player jumps. 
             //If you have a better method, go ahead and implement it.
             //Ground check via raycast
-            if (IsGrounded())
+            if (isGrounded)
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
@@ -80,7 +81,7 @@ public class Moving : MonoBehaviour
                 numJumps -= 1;
             }
         }
-        else if (IsGrounded())
+        else if (isGrounded)
         {
             //This causes the jumping animation to stop
             anim.SetBool("jumping", false);
@@ -95,7 +96,7 @@ public class Moving : MonoBehaviour
        // Debug.Log(m_RigidBody2D.velocity);
     }
 
-    bool IsGrounded()
+    /*bool IsGrounded()
     {
         //Uses the boundaries of the player box collider to spawn the ray start locations'''
         Vector2 StartPosition1 = PlayerBox.bounds.center - PlayerBox.bounds.extents;
@@ -118,5 +119,22 @@ public class Moving : MonoBehaviour
             return true;
         }
         return false;
+    }
+    */
+
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            isGrounded = true;
+        }
+        else
+            isGrounded = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isGrounded = false;
     }
 }
