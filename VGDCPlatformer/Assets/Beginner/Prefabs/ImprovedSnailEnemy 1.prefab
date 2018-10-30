@@ -393,7 +393,7 @@ MonoBehaviour:
   P_Layer:
     serializedVersion: 2
     m_Bits: 1024
-  ThrowingWeapon: {fileID: 1090894263164236, guid: a312fa21fc195014eb9c184a0c750667,
+  ThrowingWeapon: {fileID: 1060258318677706, guid: a312fa21fc195014eb9c184a0c750667,
     type: 2}
 --- !u!114 &114687612241904862
 MonoBehaviour:
