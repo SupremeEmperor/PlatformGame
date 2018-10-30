@@ -32,8 +32,8 @@ public class EnemyLeafProjectile : MonoBehaviour
         {
             try
             {
-                Health hp = other.gameObject.GetComponent<Health>();
-                hp.HP -= 20;
+                //Health hp = other.gameObject.GetComponent<Health>();
+                //hp.HP -= 20;
             }
             catch
             {
