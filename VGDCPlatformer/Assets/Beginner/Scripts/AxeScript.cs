@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AxeScript : MonoBehaviour {
 	public GameObject ThrownAxe;
-    private SpriteRenderer sr;
 	private BoxCollider2D hitbox;
 	public Rigidbody2D rb;
 
