@@ -19,21 +19,25 @@ public class DamageOnTouch : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         //This should work, but it really doesnt.
-        if (other.gameObject.tag == "floor")
+        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        if (!rb.isKinematic)
         {
-            Destroy(gameObject);
-        }
-        //if this object touches an enemy's hurtbox
-        if (other.gameObject.tag == "Player")
-        {
-            try
+            if (other.gameObject.tag == "floor")
             {
-                Health hp = other.gameObject.GetComponent<Health>();
-                hp.HP -= 40;
+                Destroy(gameObject);
             }
-            catch
+            //if this object touches an enemy's hurtbox
+            if (other.gameObject.tag == "Player")
             {
+                try
+                {
+                    Health hp = other.gameObject.GetComponent<Health>();
+                    hp.HP -= 40;
+                }
+                catch
+                {
 
+                }
             }
         }
     }

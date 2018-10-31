@@ -40,10 +40,15 @@ public class LeafProjectile : MonoBehaviour
 
             }
         }
-        Debug.Log("k"); //Just for debugging
-        if (other.gameObject.tag != "checkPoint" || other.gameObject.tag != "Gizmos")
+        //Debug.Log("k"); //Just for debugging
+        if (other.gameObject.tag == "floor" /* || other.gameObject.tag != "Gizmos" */|| other.gameObject.tag == "hitbox")
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

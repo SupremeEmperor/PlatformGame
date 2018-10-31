@@ -45,7 +45,7 @@ public class TheEnemy : MonoBehaviour {
     //flips the entire gameObject and its components
     public void Flip()
     {
-        print("k");
+        //print("k");
         moveRight = !moveRight;
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;

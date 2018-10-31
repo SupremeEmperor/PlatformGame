@@ -20,11 +20,11 @@ public class Flip : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("k");
+        //print("k");
         if (other.gameObject.tag == "hurtbox")
         {
             Flp.Flip();
-            print("k");
+            //print("k");
         }
     }
 }
