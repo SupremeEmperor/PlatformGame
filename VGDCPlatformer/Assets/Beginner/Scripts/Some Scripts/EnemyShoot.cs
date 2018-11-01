@@ -10,6 +10,7 @@ public class EnemyShoot : MonoBehaviour
     private Vector2 Face;
     private Vector3 StartLocation;
     public GameObject ThrowingWeapon;
+    public GameObject ThrowingWeapon2;
     private SpriteRenderer sr;
     
     // Use this for initialization
@@ -69,16 +70,20 @@ public class EnemyShoot : MonoBehaviour
                 Face = Vector2.right;
                 StartLocation = new Vector3(transform.position.x + 1f, transform.position.y, 0);
                 GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+               // GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+               // projectile2.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
             }
             else if(Direction.moveRight == false)
             {
                 Face = Vector2.left;
                 StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
                 GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                //GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
                 sr = projectile.GetComponent<SpriteRenderer>();
                 sr.flipX = true;
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
+               // projectile2.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
             }
         }
     }
