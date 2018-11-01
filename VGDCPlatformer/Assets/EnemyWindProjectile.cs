@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeafProjectile : MonoBehaviour
+public class EnemyWindProjectile : MonoBehaviour
 {
     //private Rigidbody2D WeaponRigidBody;
-    private GameObject leaf;
-    private BoxCollider2D hitbox;
+    private GameObject Enemywind;
+    private CircleCollider2D Enemyhitbox;
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
@@ -14,26 +14,26 @@ public class LeafProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
-        leaf = GetComponent<GameObject>();
-        hitbox = gameObject.GetComponent<BoxCollider2D>();
+        Enemywind = GetComponent<GameObject>();
+        Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "hitbox")
+        /*if (other.gameObject.tag == "Player")
         {
             try
             {
-                Health hp = other.gameObject.GetComponent<Health>();
-                hp.HP -= 20;
+                //Health hp = other.gameObject.GetComponent<Health>();
+                //hp.HP -= 20;
             }
             catch
             {
@@ -41,10 +41,10 @@ public class LeafProjectile : MonoBehaviour
             }
         }
         //Debug.Log("k"); //Just for debugging
-        if (other.gameObject.tag == "floor" /* || other.gameObject.tag != "Gizmos" */|| other.gameObject.tag == "hurtbox")
-        {
-            Destroy(gameObject);
-        }
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "floor")
+        {*/
+        Destroy(gameObject, 3f);
+       // }
     }
 
     void OnBecameInvisible()
