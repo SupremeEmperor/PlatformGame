@@ -41,7 +41,7 @@ GameObject:
   m_Layer: 8
   m_Name: PositionA
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -96,7 +96,7 @@ GameObject:
   m_Layer: 8
   m_Name: PositionB
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -354,6 +354,7 @@ MonoBehaviour:
     m_Bits: 1024
   ThrowingWeapon: {fileID: 1621398608227490, guid: 40a07d6c80b40624d80eeeb3d8e1ddb1,
     type: 2}
+  ThrowingWeapon2: {fileID: 0}
 --- !u!114 &114025475842268738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,6 +395,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   ThrowingWeapon: {fileID: 1060258318677706, guid: a312fa21fc195014eb9c184a0c750667,
+    type: 2}
+  ThrowingWeapon2: {fileID: 1985505647026116, guid: 87208e7fa81250f4c928ef7b51c40589,
     type: 2}
 --- !u!114 &114687612241904862
 MonoBehaviour:
