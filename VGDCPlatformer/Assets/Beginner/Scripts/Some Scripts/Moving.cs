@@ -10,22 +10,35 @@ public class Moving : MonoBehaviour
     public float RunSpeed = 15f;//changes speed
     public float HorizontalMove = 0f;//this is the speed
     public float m_JumpForce = 200f;
-    public Animator anim;
+    //public Animator anim;
     private SpriteRenderer sr;
     public LayerMask GroundLayer;
     public bool FaceRight;
     public int numJumps;
     private bool isGrounded;
 
-	// Use this for initialization
-	void Start ()
+    //=======================Dashing==================
+    //variables for dashing, you can set the time for how long the dash will last and how far
+    private int direction;
+    private float dashTime;
+    public float startDashTime;
+    public float dashForce;
+    public bool isDashing;
+
+    // Use this for initialization
+    void Start ()
     {
         FaceRight = true;
         PlayerBox = GetComponent<BoxCollider2D>();
-        anim = gameObject.GetComponent<Animator>(); 
+        //anim = gameObject.GetComponent<Animator>(); 
         sr = GetComponent<SpriteRenderer>();
         m_Velocity = Vector3.zero;
-	}
+
+        //================== Dashing =============
+        isDashing = false;
+        //this sets the time for how long the player will dash
+        dashTime = startDashTime;
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,12 +59,12 @@ public class Moving : MonoBehaviour
             }
             HorizontalMove = HorizontalInput * RunSpeed;
             //This causes the running animation to play
-            anim.SetBool("running", true);
+           // anim.SetBool("running", true);
         }
         else
         {
             //This causes the running animation to stop
-            anim.SetBool("running", false);
+            //anim.SetBool("running", false);
             //This removes all momentum
             HorizontalMove = 0;
         }
@@ -59,7 +72,7 @@ public class Moving : MonoBehaviour
         if (m_RigidBody2D.velocity.y != 0)
         {
             //This causes the jumping animation to play
-            anim.SetBool("jumping", true);
+            //anim.SetBool("jumping", true);
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -84,7 +97,7 @@ public class Moving : MonoBehaviour
         else if (isGrounded)
         {
             //This causes the jumping animation to stop
-            anim.SetBool("jumping", false);
+            //anim.SetBool("jumping", false);
             numJumps = 1;
         }
     }
@@ -93,7 +106,47 @@ public class Moving : MonoBehaviour
         //sets the movement of character
         Vector3 targetVelocity = new Vector2(HorizontalMove * RunSpeed * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
-       // Debug.Log(m_RigidBody2D.velocity);
+        // Debug.Log(m_RigidBody2D.velocity);
+
+
+        //======================= Dashing ==========================
+        //this checks if the player is facing right or left
+        //if facing right, then direction is +1 in x direction
+        //if facing left(not right), then direction is -1 in x direction
+        if (FaceRight)
+        {
+            direction = 1;
+        }
+        else if (!FaceRight)
+        {
+            direction = -1;
+        }
+
+        //if the player presses V, then dash
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            isDashing = true;
+        }
+
+        //if the player is dashing then dash
+        if (isDashing)
+        {
+            //this tells us how ling the dash is lasting for
+            //and resets the timer when the dashTime is below 0
+            if (dashTime <= 0)
+            {
+                dashTime = startDashTime;
+                isDashing = false;
+                m_RigidBody2D.velocity = Vector2.zero;
+            }
+            else
+            {
+                //continually add force whichever direction is facing
+                m_RigidBody2D.velocity = new Vector2(dashForce * direction, m_RigidBody2D.velocity.y);
+                dashTime -= Time.deltaTime;
+
+            }
+        }
     }
 
     /*bool IsGrounded()
