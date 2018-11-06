@@ -36,15 +36,16 @@ public class ThrowWeapon : MonoBehaviour {
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
             }
         }
+        //Firing mechanism for the Axe(Right then left)(button P)
         if(Input.GetButtonDown("Fire2")){
              if (PlayerDirection.FaceRight){
-                StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon2,transform.position,Quaternion.identity);
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(10,20); 
+                StartLocation = new Vector3(transform.position.x + .5f, transform.position.y, 0);
+                GameObject projectile = Instantiate(ThrowingWeapon2,StartLocation, Quaternion.identity);
+                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 20); 
             } else{
-                StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon2,transform.position,Quaternion.identity);
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-10,20);
+                StartLocation = new Vector3(transform.position.x - .5f, transform.position.y, 0);
+                GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
+                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 20);
             } 
         }
 	}

@@ -13,18 +13,6 @@ public class AxeScript : MonoBehaviour {
 	}
 	private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "hitbox")
-        {
-            try
-            {
-                Health hp = other.gameObject.GetComponent<Health>();
-                hp.HP -= 40;
-            }
-            catch
-            {
-
-            }
-        }
         if (other.gameObject.tag != "checkPoint" || other.gameObject.tag != "Gizmos")
         {
             Destroy(gameObject);
