@@ -32,7 +32,7 @@ public class DamageOnTouch : MonoBehaviour
                 try
                 {
                     Health hp = other.gameObject.GetComponent<Health>();
-                    hp.HP -= 40;
+                    //hp.HP -= 40;
                 }
                 catch
                 {
