@@ -24374,6 +24374,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1197485495452686, guid: 0a92468153ae1364a8216a8a901ef68a,
         type: 2}
+    - target: {fileID: 114015203627530288, guid: 6de53174e7246334d8c9dbed8da95547,
+        type: 2}
+      propertyPath: startDashTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015203627530288, guid: 6de53174e7246334d8c9dbed8da95547,
+        type: 2}
+      propertyPath: dashForce
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de53174e7246334d8c9dbed8da95547, type: 2}
   m_IsPrefabAsset: 0
