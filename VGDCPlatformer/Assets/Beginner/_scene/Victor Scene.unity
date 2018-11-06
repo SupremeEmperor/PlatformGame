@@ -1736,6 +1736,30 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e67fd06a4e4618a48b30605a6eeee45a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &774915968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1738659199065714, guid: 5f6dd68b60f3e1b45ae935e2d8c28799,
+    type: 2}
+  m_PrefabInternal: {fileID: 2134844915}
+--- !u!249 &774915974
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774915968}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 180
+  m_ForceMagnitude: 20000
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1 &782718079
 GameObject:
   m_ObjectHideFlags: 0
@@ -23714,6 +23738,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 60895106250249324, guid: 5f6dd68b60f3e1b45ae935e2d8c28799,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f6dd68b60f3e1b45ae935e2d8c28799, type: 2}
   m_IsPrefabAsset: 0
@@ -24502,6 +24531,30 @@ Transform:
   m_Father: {fileID: 866828145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1906973601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1738659199065714, guid: 5f6dd68b60f3e1b45ae935e2d8c28799,
+    type: 2}
+  m_PrefabInternal: {fileID: 1553980593}
+--- !u!249 &1906973607
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906973601}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 180
+  m_ForceMagnitude: 20000
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1001 &1952106295
 Prefab:
   m_ObjectHideFlags: 0
@@ -29747,6 +29800,11 @@ Prefab:
     - target: {fileID: 1519569093841740, guid: 5f6dd68b60f3e1b45ae935e2d8c28799, type: 2}
       propertyPath: m_Name
       value: FallingICICLES (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 60895106250249324, guid: 5f6dd68b60f3e1b45ae935e2d8c28799,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f6dd68b60f3e1b45ae935e2d8c28799, type: 2}
