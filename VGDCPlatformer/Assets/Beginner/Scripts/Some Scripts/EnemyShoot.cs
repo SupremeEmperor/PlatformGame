@@ -12,6 +12,8 @@ public class EnemyShoot : MonoBehaviour
     public GameObject ThrowingWeapon;
     public GameObject ThrowingWeapon2;
     private SpriteRenderer sr;
+    public float Limit;
+    private float projectileLimit = 0;
     
     // Use this for initialization
     void Start ()
@@ -61,6 +63,14 @@ public class EnemyShoot : MonoBehaviour
          return false;
      }*/
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            projectileLimit = 0;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -69,20 +79,29 @@ public class EnemyShoot : MonoBehaviour
             {
                 Face = Vector2.right;
                 StartLocation = new Vector3(transform.position.x + 1f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
-               // GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+                if (projectileLimit < Limit)
+                {
+                    GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                    projectileLimit++;
+                    // GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+                }
                // projectile2.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
             }
             else if(Direction.moveRight == false)
             {
                 Face = Vector2.left;
                 StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                if (projectileLimit < Limit)
+                {
+                    GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                    projectileLimit++;
+                    sr = projectile.GetComponent<SpriteRenderer>();
+                    sr.flipX = true;
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
+                }
                 //GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                sr = projectile.GetComponent<SpriteRenderer>();
-                sr.flipX = true;
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
+                
                // projectile2.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
             }
         }

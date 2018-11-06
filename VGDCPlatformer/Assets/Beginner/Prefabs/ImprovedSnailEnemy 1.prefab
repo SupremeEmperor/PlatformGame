@@ -355,6 +355,7 @@ MonoBehaviour:
   ThrowingWeapon: {fileID: 1621398608227490, guid: 40a07d6c80b40624d80eeeb3d8e1ddb1,
     type: 2}
   ThrowingWeapon2: {fileID: 0}
+  Limit: 0
 --- !u!114 &114025475842268738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,6 +399,7 @@ MonoBehaviour:
     type: 2}
   ThrowingWeapon2: {fileID: 1985505647026116, guid: 87208e7fa81250f4c928ef7b51c40589,
     type: 2}
+  Limit: 20
 --- !u!114 &114687612241904862
 MonoBehaviour:
   m_ObjectHideFlags: 1
