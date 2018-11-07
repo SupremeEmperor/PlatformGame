@@ -30,8 +30,7 @@ public class EnemyMoving : MonoBehaviour
         /*  anim = gameObject.GetComponent<Animator>();
           sr = GetComponent<SpriteRenderer>();
           m_Velocity = Vector3.zero;*/
-        MoveLeft = new Vector2(-HorizontalMove, m_RigidBody2D.velocity.y);
-        MoveRight = new Vector2(HorizontalMove, m_RigidBody2D.velocity.y);
+        
     }
 	
 	// Update is called once per frame
@@ -42,6 +41,8 @@ public class EnemyMoving : MonoBehaviour
 
     private void FixedUpdate()
     {
+        MoveLeft = new Vector2(-HorizontalMove, m_RigidBody2D.velocity.y);
+        MoveRight = new Vector2(HorizontalMove, m_RigidBody2D.velocity.y);
         //Debug.Log(transform.position.x > leftBound.position.x);
         if (transform.position.x < leftBound.position.x)
         {
@@ -54,9 +55,9 @@ public class EnemyMoving : MonoBehaviour
         {
             //m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
             flipLeft();
-            print("this happened");
-            print("moving left = " + MovingLeft);
-            print("moving right = " + MovingRight);
+            //print("this happened");
+            //print("moving left = " + MovingLeft);
+            //print("moving right = " + MovingRight);
         }
         if (MovingRight && MovingLeft == false)
         {
