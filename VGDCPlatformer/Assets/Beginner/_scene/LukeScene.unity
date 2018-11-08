@@ -24269,7 +24269,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300010, guid: 00550670f7cee4b4f895ce40074d923d, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 00550670f7cee4b4f895ce40074d923d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24329,7 +24329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5c6556e30a4694d9176f3eede31513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  other: {fileID: 1259607361}
+  other: {fileID: 0}
 --- !u!1 &866828144
 GameObject:
   m_ObjectHideFlags: 0
@@ -24762,12 +24762,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 66.01531, y: 14.074955}
   m_EdgeRadius: 0
---- !u!114 &1259607361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114934438150059644, guid: fcb30cc1fc1d3e048bea4c8f19f8f82d,
-    type: 2}
-  m_PrefabInternal: {fileID: 281548365}
-  m_Script: {fileID: 11500000, guid: 06eaf75051b4e6842bdbfb00c5c6e1b8, type: 3}
 --- !u!1 &1278456731
 GameObject:
   m_ObjectHideFlags: 0

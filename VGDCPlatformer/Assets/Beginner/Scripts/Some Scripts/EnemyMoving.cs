@@ -14,40 +14,88 @@ public class EnemyMoving : MonoBehaviour
     private SpriteRenderer sr;
     public LayerMask GroundLayer; */
     //private bool inBounds;
-    public float leftBound;
-    public float rightBound;
+    public Transform leftBound;
+    public Transform rightBound;
     private int count;
     public int FrameMovement;
-    public bool MoveRight;
-    
+    private Vector2 MoveRight;
+    private Vector2 MoveLeft;
+    public bool MovingRight = true;
+    public bool MovingLeft = false;
+    private Vector2 localScale;
+    private float leftflip;
+    private float rightflip;
+    public bool stopMove = false;
+
+
     // Use this for initialization
     void Start ()
     {
-      /*  anim = gameObject.GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
-        m_Velocity = Vector3.zero;*/
+        /*  anim = gameObject.GetComponent<Animator>();
+          sr = GetComponent<SpriteRenderer>();
+          m_Velocity = Vector3.zero;*/
+        localScale = gameObject.transform.localScale;
+        rightflip = -localScale.x;
+        leftflip = localScale.x;
+        //MoveLeft = new Vector2(-HorizontalMove, m_RigidBody2D.velocity.y);
+        //MoveRight = new Vector2(HorizontalMove, m_RigidBody2D.velocity.y); 
+        m_RigidBody2D.velocity = MoveLeft;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
 		
 	}
 
     private void FixedUpdate()
     {
-        Debug.Log(transform.position.x > leftBound);
-        if (count < FrameMovement)// || transform.position.x < rightBound)
+        MoveLeft = new Vector2(-HorizontalMove, m_RigidBody2D.velocity.y);
+        MoveRight = new Vector2(HorizontalMove, m_RigidBody2D.velocity.y);
+        //Debug.Log(transform.position.x > leftBound.position.x);
+        if (transform.position.x < leftBound.position.x)
         {
-            m_RigidBody2D.velocity = new Vector2(HorizontalMove, m_RigidBody2D.velocity.y);
-            count++;
+            //m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
+            flipRight();
+            print("moving left = " + MovingLeft);
+            print("moving right = " + MovingRight);
         }
-        else if (count > 0)
+        else if (transform.position.x > rightBound.position.x)
         {
-            m_RigidBody2D.velocity = new Vector2(-HorizontalMove, m_RigidBody2D.velocity.y);
-            count--;
+            //m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
+            flipLeft();
+            //print("this happened");
+            //print("moving left = " + MovingLeft);
+            //print("moving right = " + MovingRight);
         }
-
-
+        if (stopMove == true)
+        {
+            m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
+        }
+        else if (stopMove == false && MovingRight == true)
+        {
+            m_RigidBody2D.velocity = MoveRight;
+        }
+        else if (stopMove == false && MovingLeft == true)
+        {
+            m_RigidBody2D.velocity = MoveLeft;
+        }
     }
+    private void flipRight()
+    {
+        MovingRight = true;
+        MovingLeft = false;
+        localScale.x = rightflip;
+        transform.localScale = localScale;
+    }
+
+    private void flipLeft()
+    {
+        MovingLeft = true;
+        MovingRight = false;
+        Vector2 localScale = gameObject.transform.localScale;
+        localScale.x = leftflip;
+        transform.localScale = localScale;
+    }
+
 }

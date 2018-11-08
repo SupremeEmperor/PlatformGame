@@ -10,7 +10,7 @@ public class Moving : MonoBehaviour
     public float RunSpeed = 15f;//changes speed
     public float HorizontalMove = 0f;//this is the speed
     public float m_JumpForce = 200f;
-    //public Animator anim;
+    public Animator anim;
     private SpriteRenderer sr;
     public LayerMask GroundLayer;
     public bool FaceRight;
@@ -30,7 +30,7 @@ public class Moving : MonoBehaviour
     {
         FaceRight = true;
         PlayerBox = GetComponent<BoxCollider2D>();
-        //anim = gameObject.GetComponent<Animator>(); 
+        anim = gameObject.GetComponent<Animator>(); 
         sr = GetComponent<SpriteRenderer>();
         m_Velocity = Vector3.zero;
 
@@ -59,12 +59,12 @@ public class Moving : MonoBehaviour
             }
             HorizontalMove = HorizontalInput * RunSpeed;
             //This causes the running animation to play
-           // anim.SetBool("running", true);
+            anim.SetBool("running", true);
         }
         else
         {
             //This causes the running animation to stop
-            //anim.SetBool("running", false);
+            anim.SetBool("running", false);
             //This removes all momentum
             HorizontalMove = 0;
         }
@@ -72,7 +72,7 @@ public class Moving : MonoBehaviour
         if (m_RigidBody2D.velocity.y != 0)
         {
             //This causes the jumping animation to play
-            //anim.SetBool("jumping", true);
+            anim.SetBool("jumping", true);
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -88,7 +88,7 @@ public class Moving : MonoBehaviour
             }
             else if (/*IsGrounded()*/numJumps > 0)
             {
-                //anim.SetBool("jumping", true);
+                anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
                 numJumps -= 1;
@@ -97,7 +97,7 @@ public class Moving : MonoBehaviour
         else if (isGrounded)
         {
             //This causes the jumping animation to stop
-            //anim.SetBool("jumping", false);
+            anim.SetBool("jumping", false);
             numJumps = 1;
         }
     }

@@ -15,6 +15,11 @@ public class AxeScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "floor" || other.gameObject.tag == "hurtbox" )
         {
+
+
+        }
+        if (other.gameObject.tag == "floor" || other.gameObject.tag == "hurtbox")
+        {
             Destroy(gameObject);
         }
     }
