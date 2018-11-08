@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4635330944617432}
   - component: {fileID: 50463244290203474}
   - component: {fileID: 70117542040164874}
+  - component: {fileID: 114665616521257560}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Untagged
@@ -149,11 +150,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61218734504023572
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -187,13 +188,24 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1197485495452686}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.016521374, y: -0.30539265}
   m_Size: {x: 0.8019108, y: 0.3892222}
   m_Direction: 1
+--- !u!114 &114665616521257560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197485495452686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890c0ed2d64f3814a9f16701bcd71943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198379037333841748
 ParticleSystem:
   m_ObjectHideFlags: 1
