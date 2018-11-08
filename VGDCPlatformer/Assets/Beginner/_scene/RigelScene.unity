@@ -193,7 +193,6 @@ GameObject:
   - component: {fileID: 410380018}
   - component: {fileID: 410380017}
   - component: {fileID: 410380016}
-  - component: {fileID: 410380015}
   m_Layer: 0
   m_Name: Player(Beginner) (1)
   m_TagString: Untagged
@@ -201,21 +200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &410380015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 410380014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b3c8b04e9fc4443a41c745acabeee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thePlayer: {fileID: 410380016}
-  startDashTime: 0.2
-  dashForce: 25
-  isDashing: 0
 --- !u!114 &410380016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +221,7 @@ MonoBehaviour:
   FaceRight: 0
   numJumps: 10
   startDashTime: 0.2
-  dashForce: 25
+  dashForce: 10
   isDashing: 0
 --- !u!50 &410380017
 Rigidbody2D:

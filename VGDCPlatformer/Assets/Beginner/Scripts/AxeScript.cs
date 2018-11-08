@@ -13,7 +13,7 @@ public class AxeScript : MonoBehaviour {
 	}
 	private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "floor" || other.gameObject.tag == "hurtbox" || )
+        if (other.gameObject.tag == "floor" || other.gameObject.tag == "hurtbox" )
         {
             Destroy(gameObject);
         }
