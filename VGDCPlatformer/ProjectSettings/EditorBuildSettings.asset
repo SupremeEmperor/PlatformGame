@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Beginner/_scene/Level 1.unity
     guid: 4e0e220fd808a3b4d8a8fe2111a9db0c
   - enabled: 1
-    path: Assets/Beginner/_scene/Victor Scene.unity
-    guid: 2b31c6cb11826e24c96e9abb920e6ee6
+    path: Assets/Beginner/_scene/CreditsScene.unity
+    guid: 47463c14a7c8d3540b36c5b2c87642d5
   m_configObjects: {}
