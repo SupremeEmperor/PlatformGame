@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowWeapon : MonoBehaviour {
+public class ThrowWeapon : MonoBehaviour
+{
     public Moving PlayerDirection;
     public GameObject ThrowingWeapon1;
     public GameObject ThrowingWeapon2;
     private Vector3 StartLocation;
     private SpriteRenderer sr;
-    public string Weapon;
+    //public string Weapon;
+    public int tornadocount;
+    public int maxtornadocount = 1;
 
     // Use this for initialization
     void Start ()
@@ -37,15 +40,27 @@ public class ThrowWeapon : MonoBehaviour {
             }
         }
         //Firing mechanism for the Axe(Right then left)(button P)
-        if(Input.GetButtonDown("Fire2")){
-             if (PlayerDirection.FaceRight){
+        if(Input.GetButtonDown("Fire2"))
+        {
+            if (PlayerDirection.FaceRight)
+            {
                 StartLocation = new Vector3(transform.position.x + .5f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon2,StartLocation, Quaternion.identity);
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 20); 
-            } else{
+                if (tornadocount < maxtornadocount)
+                {
+                    GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
+                    tornadocount += 1;
+                }
+            }
+            else
+            {
                 StartLocation = new Vector3(transform.position.x - .5f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 20);
+                if (tornadocount < maxtornadocount)
+                {
+                    GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+                    tornadocount += 1;
+                }
             } 
         }
 	}

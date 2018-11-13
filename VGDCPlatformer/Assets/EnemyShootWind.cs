@@ -30,7 +30,7 @@ public class EnemyShootWind : MonoBehaviour
             {
                 movingright.stopMove = true;
                 Face = Vector2.right;
-                StartLocation = new Vector3(transform.position.x + 1f, transform.position.y, 0);
+                StartLocation = new Vector3(transform.position.x + 10f, transform.position.y, 0);
                 GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
                 // GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
                 projectile.transform.Translate(new Vector2(20, 0));

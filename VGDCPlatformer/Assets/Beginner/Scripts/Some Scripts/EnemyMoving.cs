@@ -10,9 +10,11 @@ public class EnemyMoving : MonoBehaviour
     public float RunSpeed = 15f;//changes speed 
     public float HorizontalMove = 0f;//this is the speed
  //   public float m_JumpForce = 200f;
-   /* public Animator anim;
+    //========================================
+    public Animator anim;
     private SpriteRenderer sr;
-    public LayerMask GroundLayer; */
+    public LayerMask GroundLayer; 
+    //========================================
     //private bool inBounds;
     public Transform leftBound;
     public Transform rightBound;
@@ -31,9 +33,9 @@ public class EnemyMoving : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        /*  anim = gameObject.GetComponent<Animator>();
-          sr = GetComponent<SpriteRenderer>();
-          m_Velocity = Vector3.zero;*/
+        anim = gameObject.GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
+          //m_Velocity = Vector3.zero;
         localScale = gameObject.transform.localScale;
         rightflip = -localScale.x;
         leftflip = localScale.x;
@@ -57,8 +59,8 @@ public class EnemyMoving : MonoBehaviour
         {
             //m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
             flipRight();
-            print("moving left = " + MovingLeft);
-            print("moving right = " + MovingRight);
+            //print("moving left = " + MovingLeft);
+            //print("moving right = " + MovingRight);
         }
         else if (transform.position.x > rightBound.position.x)
         {
@@ -71,14 +73,17 @@ public class EnemyMoving : MonoBehaviour
         if (stopMove == true)
         {
             m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
+            anim.SetBool("Is Moving", false);
         }
         else if (stopMove == false && MovingRight == true)
         {
             m_RigidBody2D.velocity = MoveRight;
+            anim.SetBool("Is Moving", true);
         }
         else if (stopMove == false && MovingLeft == true)
         {
             m_RigidBody2D.velocity = MoveLeft;
+            anim.SetBool("Is Moving", true);
         }
     }
     private void flipRight()

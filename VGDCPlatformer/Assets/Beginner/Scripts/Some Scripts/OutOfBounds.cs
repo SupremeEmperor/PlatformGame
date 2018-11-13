@@ -21,6 +21,6 @@ public class OutOfBounds : MonoBehaviour
         {
             transform.position = RespawnPointx.transform.position;
             HealthScript.HP -= 20;
-	    }
+        }
     }
 }

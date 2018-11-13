@@ -26,11 +26,11 @@ public class Moving : MonoBehaviour
     public bool isDashing;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         FaceRight = true;
         PlayerBox = GetComponent<BoxCollider2D>();
-        anim = gameObject.GetComponent<Animator>(); 
+        anim = gameObject.GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         m_Velocity = Vector3.zero;
 
@@ -84,7 +84,7 @@ public class Moving : MonoBehaviour
             {
                 //anim.SetBool("jumping", true);
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));               
+                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
             }
             else if (/*IsGrounded()*/numJumps > 0)
             {
