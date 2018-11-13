@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class OutOfBounds : MonoBehaviour
@@ -20,7 +21,13 @@ public class OutOfBounds : MonoBehaviour
 		if (transform.position.y < OoB)
         {
             transform.position = RespawnPointx.transform.position;
-            HealthScript.HP -= 20;
-	    }
+            restartCurrentScene();
+        }
+    }
+
+    public void restartCurrentScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
