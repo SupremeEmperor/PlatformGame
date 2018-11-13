@@ -22,7 +22,7 @@ TagManager:
   - Ground
   - Wall
   - Player
-  - 
+  - Particles
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: ForeGround
     uniqueID: 3930697077
+    locked: 0
+  - name: Particle
+    uniqueID: 1576138371
     locked: 0
