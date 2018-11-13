@@ -19,6 +19,16 @@ public class SceneManagement : MonoBehaviour {
         Application.Quit();
     }
 
+    public void CreditsScene()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
 	// Use this for initialization
 	void Start () {
 		
