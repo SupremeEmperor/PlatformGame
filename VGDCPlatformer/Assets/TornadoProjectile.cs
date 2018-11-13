@@ -6,6 +6,7 @@ public class TornadoProjectile : MonoBehaviour {
     private ThrowWeapon Throwscript;
     public GameObject Player;
     public string ObjectName;
+    public int tornadoduration;
 
 	// Use this for initialization
 	void Start ()
@@ -17,7 +18,7 @@ public class TornadoProjectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Destroy(gameObject, 5);
+        Destroy(gameObject, tornadoduration);
 	}
 
     private void OnDestroy()
