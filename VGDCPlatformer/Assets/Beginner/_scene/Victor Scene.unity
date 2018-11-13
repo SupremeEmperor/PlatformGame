@@ -325,6 +325,18 @@ Prefab:
       propertyPath: m_FocalLength
       value: 32.96973
       objectReference: {fileID: 0}
+    - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349138187672714, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 24.202002
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114063797996924498, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: e9b8411a2b8469b4196090088beb9c16, type: 2}
@@ -24387,12 +24399,17 @@ Prefab:
         type: 2}
       propertyPath: ThrowingWeapon2
       value: 
-      objectReference: {fileID: 1985505647026116, guid: 87208e7fa81250f4c928ef7b51c40589,
+      objectReference: {fileID: 1197485495452686, guid: 0a92468153ae1364a8216a8a901ef68a,
         type: 2}
     - target: {fileID: 50860174727135526, guid: b1cb9cd7f94dbee4e9ff0fdc7f2c93da,
         type: 2}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114802259874736686, guid: b1cb9cd7f94dbee4e9ff0fdc7f2c93da,
+        type: 2}
+      propertyPath: maxtornadocount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1cb9cd7f94dbee4e9ff0fdc7f2c93da, type: 2}
@@ -30048,7 +30065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3711b9b60fcba644ab68654ea65bb521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrowingWeapon: {fileID: 1197485495452686, guid: 0a92468153ae1364a8216a8a901ef68a,
+  ThrowingWeapon: {fileID: 1197485495452686, guid: 4e7fb24f9f1c4d945924cf24011919f2,
     type: 2}
   movingright: {fileID: 1522855900}
 --- !u!1001 &2134844915
