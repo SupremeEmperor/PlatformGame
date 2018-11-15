@@ -6,8 +6,8 @@ public class EnemyShoot : MonoBehaviour
 {
     public TheEnemy Direction;
     public LayerMask P_Layer;
-    private CircleCollider2D Enemy;
-    private Vector2 Face;
+    //private CircleCollider2D Enemy;
+    //private Vector2 Face;
     private Vector3 StartLocation;
     public GameObject ThrowingWeapon;
     public GameObject ThrowingWeapon2;
@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        Enemy = GetComponent<CircleCollider2D>();
+        //Enemy = GetComponent<CircleCollider2D>();
     }
 	
 	// Update is called once per frame
@@ -77,7 +77,7 @@ public class EnemyShoot : MonoBehaviour
         {
             if (Direction.moveRight == true)
             {
-                Face = Vector2.right;
+                //Face = Vector2.right;
                 StartLocation = new Vector3(transform.position.x + 1f, transform.position.y, 0);
                 if (projectileLimit < Limit)
                 {
@@ -90,7 +90,7 @@ public class EnemyShoot : MonoBehaviour
             }
             else if(Direction.moveRight == false)
             {
-                Face = Vector2.left;
+                //Face = Vector2.left;
                 StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
                 if (projectileLimit < Limit)
                 {

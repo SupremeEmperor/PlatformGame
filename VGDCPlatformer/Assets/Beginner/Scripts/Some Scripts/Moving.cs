@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    private BoxCollider2D PlayerBox;
-    private Vector3 m_Velocity;//stores speed of char
+    //private BoxCollider2D PlayerBox;
+    //private Vector3 m_Velocity;//stores speed of char
     public Rigidbody2D m_RigidBody2D;
     public float RunSpeed = 15f;//changes speed
     public float HorizontalMove = 0f;//this is the speed
@@ -29,10 +29,10 @@ public class Moving : MonoBehaviour
     void Start()
     {
         FaceRight = true;
-        PlayerBox = GetComponent<BoxCollider2D>();
+        //PlayerBox = GetComponent<BoxCollider2D>();
         anim = gameObject.GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        m_Velocity = Vector3.zero;
+        //m_Velocity = Vector3.zero;
 
         //================== Dashing =============
         isDashing = false;

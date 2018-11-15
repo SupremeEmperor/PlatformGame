@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyWindProjectile : MonoBehaviour
 {
     //private Rigidbody2D WeaponRigidBody;
-    private GameObject Enemywind;
-    private CircleCollider2D Enemyhitbox;
+    //private GameObject Enemywind;
+    //private CircleCollider2D Enemyhitbox;
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
@@ -16,8 +16,8 @@ public class EnemyWindProjectile : MonoBehaviour
     {
 
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
-        Enemywind = GetComponent<GameObject>();
-        Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
+        //Enemywind = GetComponent<GameObject>();
+        //Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame

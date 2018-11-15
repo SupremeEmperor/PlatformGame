@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyLeafProjectile : MonoBehaviour
 {
     //private Rigidbody2D WeaponRigidBody;
-    private GameObject Enemyleaf;
-    private CircleCollider2D Enemyhitbox;
+    //private GameObject Enemyleaf;
+    //private CircleCollider2D Enemyhitbox;
     //public float speed;
     //public Moving PlayerMovingScript;
     //public Vector2 Direction;
@@ -16,8 +16,8 @@ public class EnemyLeafProjectile : MonoBehaviour
     {
 
         //WeaponRigidBody = GetComponent<Rigidbody2D>();
-        Enemyleaf = GetComponent<GameObject>();
-        Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
+        //Enemyleaf = GetComponent<GameObject>();
+        //Enemyhitbox = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame

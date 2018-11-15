@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageOnTouch : MonoBehaviour
 {
+    public GameObject dangerzone;
 
     // Use this for initialization
     void Start()
@@ -24,14 +25,14 @@ public class DamageOnTouch : MonoBehaviour
         {
             if (other.gameObject.tag == "floor")
             {
-                Destroy(gameObject);
+                Destroy(dangerzone);
             }
             //if this object touches an enemy's hurtbox
             if (other.gameObject.tag == "Player")
             {
                 try
                 {
-                    Health hp = other.gameObject.GetComponent<Health>();
+                    //Health hp = other.gameObject.GetComponent<Health>();
                     //hp.HP -= 40;
                 }
                 catch

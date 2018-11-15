@@ -11,7 +11,8 @@ public class TriggerFall : MonoBehaviour {
         //gameObject will drop down by gravity
         if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D rb= gameObject.GetComponentInChildren<Rigidbody2D>();
+            Rigidbody2D rb = gameObject.GetComponentInChildren<Rigidbody2D>();
+            //Debug.Log(rb.name);
             rb.isKinematic = false; //changing Body Type to Dynamic to allow gravity
         }
     }
