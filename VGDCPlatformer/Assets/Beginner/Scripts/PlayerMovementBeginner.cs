@@ -10,7 +10,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     //=========== Moving Logic ============
     public float runSpeed = 0f;
     private float horizontalMove = 0f;
-    private Vector3 m_Velocity;
+    //private Vector3 m_Velocity;
     public bool isMoving;
 
     [Space]
@@ -30,7 +30,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     {
         //m_RigidBody2D = GetComponent<Rigidbody2D>(); //Instead of manually putting the RigidBody2D Component we can get the component from the Object
         extraJumps = extraJumpsValue;
-        m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
+        //m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
         isMoving = false;
     }
 

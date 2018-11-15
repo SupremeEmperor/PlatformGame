@@ -6,7 +6,7 @@ public class EnemyShootWind : MonoBehaviour
 {
     public GameObject ThrowingWeapon;
     public EnemyMoving movingright;
-    private Vector2 Face;
+    //private Vector2 Face;
     private Vector3 StartLocation;
     private SpriteRenderer sr;
 
@@ -29,21 +29,21 @@ public class EnemyShootWind : MonoBehaviour
             if (movingright.MovingRight == true)
             {
                 movingright.stopMove = true;
-                Face = Vector2.right;
-                StartLocation = new Vector3(transform.position.x + 10f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                //Face = Vector2.right;
+                StartLocation = new Vector3(transform.position.x + 5f, transform.position.y, 0);
+                Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
                 // GameObject projectile2 = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                projectile.transform.Translate(new Vector2(20, 0));
+                //projectile.transform.Translate(new Vector2(20, 0));
             }
             if (movingright.MovingRight != true)
             {
                 movingright.stopMove = true;
-                Face = Vector2.left;
-                StartLocation = new Vector3(transform.position.x - 10f, transform.position.y, 0);
-                GameObject projectile = Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
-                sr = projectile.GetComponent<SpriteRenderer>();
-                sr.flipX = true;
-                projectile.transform.Translate(new Vector2(-20, 0));
+                //Face = Vector2.left;
+                StartLocation = new Vector3(transform.position.x - 5f, transform.position.y, 0);
+                Instantiate(ThrowingWeapon, StartLocation, Quaternion.identity);
+                //sr = projectile.GetComponent<SpriteRenderer>();
+                //sr.flipX = true;
+                //projectile.transform.Translate(new Vector2(-20, 0));
             }
         }
     }

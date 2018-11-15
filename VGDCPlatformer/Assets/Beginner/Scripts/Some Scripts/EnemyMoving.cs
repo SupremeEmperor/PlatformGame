@@ -12,7 +12,7 @@ public class EnemyMoving : MonoBehaviour
  //   public float m_JumpForce = 200f;
     //========================================
     public Animator anim;
-    private SpriteRenderer sr;
+    //private SpriteRenderer sr;
     public LayerMask GroundLayer; 
     //========================================
     //private bool inBounds;
@@ -34,7 +34,7 @@ public class EnemyMoving : MonoBehaviour
     void Start ()
     {
         anim = gameObject.GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
           //m_Velocity = Vector3.zero;
         localScale = gameObject.transform.localScale;
         rightflip = -localScale.x;
