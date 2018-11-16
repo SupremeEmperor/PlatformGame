@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5920bcbcc4c125449ca039902eb81b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tornadoduration: 5
 --- !u!198 &198379037333841748
 ParticleSystem:
   m_ObjectHideFlags: 1

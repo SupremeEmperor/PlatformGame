@@ -22627,12 +22627,6 @@ Transform:
   m_Father: {fileID: 1820196430}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &985878866 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114220093067635278, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1329165645}
-  m_Script: {fileID: 11500000, guid: cd3bd3d56a70f9b4dbb032e377e79189, type: 3}
 --- !u!1001 &1048770214
 Prefab:
   m_ObjectHideFlags: 0
@@ -23071,25 +23065,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114167642241559086, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907054801187314, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a,
-        type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 985878866}
-    - target: {fileID: 114907054801187314, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a,
-        type: 2}
-      propertyPath: Limit
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114835411897221836, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a, type: 2}
-    - {fileID: 114167642241559086, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a, type: 2}
-    - {fileID: 114689362519416124, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4956e8bfe33c08e4ca4d3fa7abafbc4a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1330577453
@@ -24111,6 +24087,11 @@ Prefab:
       propertyPath: RespawnPointx
       value: 
       objectReference: {fileID: 1732267318}
+    - target: {fileID: 114232621544013096, guid: 73287ea91844ea0448d5ef4808f48ff2,
+        type: 2}
+      propertyPath: GroundLayer.m_Bits
+      value: 4352
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73287ea91844ea0448d5ef4808f48ff2, type: 2}
   m_IsPrefabAsset: 0

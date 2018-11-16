@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 50148380537150402}
   - component: {fileID: 114816560634630966}
   - component: {fileID: 95750840618546820}
-  m_Layer: 8
-  m_Name: Windenemy
+  m_Layer: 12
+  m_Name: Windenemychild
   m_TagString: hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4090203228809174}
   - component: {fileID: 70251758295892496}
   - component: {fileID: 114250168775176472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyVision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003135465083974}
   - component: {fileID: 61990353038864516}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: hurtbox
   m_TagString: hurtbox
   m_Icon: {fileID: 0}
