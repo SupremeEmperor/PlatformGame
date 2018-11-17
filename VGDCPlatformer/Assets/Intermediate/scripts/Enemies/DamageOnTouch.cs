@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageOnTouch : MonoBehaviour
 {
     public GameObject dangerzone;
+ 
 
     // Use this for initialization
     void Start()
@@ -32,8 +33,7 @@ public class DamageOnTouch : MonoBehaviour
             {
                 try
                 {
-                    //Health hp = other.gameObject.GetComponent<Health>();
-                    //hp.HP -= 40;
+                    other.GetComponent<Freeze>().StartCoroutine("Frozen");
                 }
                 catch
                 {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TornadoProjectile : MonoBehaviour {
     private ThrowWeapon Throwscript;
-    public GameObject Player;
+    private GameObject Player;
     public string ObjectName;
     public int tornadoduration;
 

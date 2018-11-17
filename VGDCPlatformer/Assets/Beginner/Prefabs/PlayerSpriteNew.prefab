@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114225410403490922}
   - component: {fileID: 114464214643422710}
   - component: {fileID: 114767301994026936}
+  - component: {fileID: 114544230880843778}
   m_Layer: 10
   m_Name: PlayerSpriteNew
   m_TagString: Player
@@ -174,7 +175,7 @@ MonoBehaviour:
   anim: {fileID: 95985389518893368}
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   FaceRight: 0
   numJumps: 0
   startDashTime: 0.1
@@ -193,6 +194,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   ObjectRigidBody: {fileID: 50212886723021646}
+--- !u!114 &114544230880843778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021012004080328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705b9f439759acd438124e5cbfc88ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1021012004080328}
+  freezetime: 5
 --- !u!114 &114767301994026936
 MonoBehaviour:
   m_ObjectHideFlags: 1

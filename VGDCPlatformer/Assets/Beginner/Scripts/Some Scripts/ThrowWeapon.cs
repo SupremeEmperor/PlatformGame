@@ -48,7 +48,7 @@ public class ThrowWeapon : MonoBehaviour
                 if (tornadocount < maxtornadocount)
                 {
                     GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(9, 0);
                     tornadocount += 1;
                 }
             }
@@ -58,7 +58,7 @@ public class ThrowWeapon : MonoBehaviour
                 if (tornadocount < maxtornadocount)
                 {
                     GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
-                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+                    projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-9, 0);
                     tornadocount += 1;
                 }
             } 
