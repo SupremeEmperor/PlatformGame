@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    public TheEnemy Direction;
+    public EnemyMoving Direction;
     public LayerMask P_Layer;
     //private CircleCollider2D Enemy;
     //private Vector2 Face;
@@ -75,7 +75,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (Direction.moveRight == true)
+            if (Direction.MovingRight == true)
             {
                 //Face = Vector2.right;
                 StartLocation = new Vector3(transform.position.x + 1f, transform.position.y, 0);
@@ -88,7 +88,7 @@ public class EnemyShoot : MonoBehaviour
                 }
                // projectile2.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
             }
-            else if(Direction.moveRight == false)
+            else if(Direction.MovingLeft == true)
             {
                 //Face = Vector2.left;
                 StartLocation = new Vector3(transform.position.x - .7f, transform.position.y, 0);
