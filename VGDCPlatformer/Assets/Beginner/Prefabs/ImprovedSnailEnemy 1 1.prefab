@@ -38,7 +38,7 @@ GameObject:
   m_Layer: 1
   m_Name: PositionA
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70,7 +70,7 @@ GameObject:
   m_Layer: 1
   m_Name: PositionB
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -254,7 +254,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1709891588544816}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -269,7 +269,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1470591177405404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -294,7 +294,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1756998917695412}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -309,7 +309,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1709891588544816}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a177032af699de74c9c399593cc31ed2, type: 2}
+  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
