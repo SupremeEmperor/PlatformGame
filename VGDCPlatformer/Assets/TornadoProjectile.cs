@@ -21,6 +21,11 @@ public class TornadoProjectile : MonoBehaviour {
         Destroy(gameObject, tornadoduration);
 	}
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnDestroy()
     {
         Throwscript.tornadocount -= 1;
