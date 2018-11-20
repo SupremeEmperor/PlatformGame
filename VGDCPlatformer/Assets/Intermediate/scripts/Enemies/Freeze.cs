@@ -6,6 +6,7 @@ public class Freeze : MonoBehaviour
 {
     public GameObject Player;
     public float freezetime = 5;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -21,8 +22,10 @@ public class Freeze : MonoBehaviour
 
     IEnumerator Frozen()
     {
-        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+        anim.SetBool("frozen", true);
+        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSecondsRealtime(5f);
+        anim.SetBool("frozen", false);
         Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }
