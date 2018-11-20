@@ -13,6 +13,9 @@ public class Score : MonoBehaviour {
         if (timerCount >= 1)
         {
             timerCount -= pointsPerSecond * Time.deltaTime; 
+        } else
+        {
+            Destroy(GameObject.Find("PlayerSpriteNew"));
         }
 
         string minutes = Mathf.Floor(timerCount / 60).ToString("00");
