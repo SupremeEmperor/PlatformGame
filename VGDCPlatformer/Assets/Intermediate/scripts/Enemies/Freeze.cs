@@ -21,7 +21,7 @@ public class Freeze : MonoBehaviour
 
     IEnumerator Frozen()
     {
-        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         yield return new WaitForSecondsRealtime(5f);
         Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
