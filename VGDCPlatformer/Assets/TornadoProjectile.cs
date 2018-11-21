@@ -7,6 +7,7 @@ public class TornadoProjectile : MonoBehaviour {
     private GameObject Player;
     public string ObjectName;
     public int tornadoduration;
+    public GameObject tornado;
 
 	// Use this for initialization
 	void Start ()
