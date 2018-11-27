@@ -108,7 +108,7 @@ public class Moving : MonoBehaviour
         m_RigidBody2D.velocity = targetVelocity;
         // Debug.Log(m_RigidBody2D.velocity);
 
-
+        /*
         //======================= Dashing ==========================
         //this checks if the player is facing right or left
         //if facing right, then direction is +1 in x direction
@@ -146,7 +146,7 @@ public class Moving : MonoBehaviour
                 dashTime -= Time.deltaTime;
 
             }
-        }
+        }*/
     }
 
     /*bool IsGrounded()
