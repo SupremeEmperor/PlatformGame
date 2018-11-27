@@ -94,8 +94,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422668591081800}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.76, y: -4.44, z: -0.07378311}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 137.71, y: 2.03, z: -0.18511122}
   m_LocalScale: {x: 2.1962, y: 2.1962, z: 2.1962}
   m_Children:
   - {fileID: 4942432897549638}
@@ -9319,7 +9319,7 @@ AreaEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7989
   m_UseGlobalAngle: 0
   m_ForceAngle: 90
   m_ForceMagnitude: 60
