@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour {
 
+    private static bool isPaused;
+    public GameObject pauseMenu;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -29,13 +32,44 @@ public class SceneManagement : MonoBehaviour {
         SceneManager.LoadScene("MenuScene");
     }
 
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        pauseMenu.SetActive(false);
+        isPaused = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
 	}
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
 }
