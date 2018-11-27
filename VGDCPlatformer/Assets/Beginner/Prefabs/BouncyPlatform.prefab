@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61318305624621974}
   - component: {fileID: 114268577135303108}
   m_Layer: 8
-  m_Name: Platform (2)
+  m_Name: BouncyPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.64}
+    oldSize: {x: 1.17, y: 0.68}
     newSize: {x: 1.07, y: 0.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 23d18aec4455f8f48a8d468a29736fc4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c88276eb832aac4f8c8eb5457f0a2b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
