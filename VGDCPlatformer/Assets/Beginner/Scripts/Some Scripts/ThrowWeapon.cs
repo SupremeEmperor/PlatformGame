@@ -22,7 +22,7 @@ public class ThrowWeapon : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("Fire1"))
+        /*if (Input.GetButtonDown("Fire1"))
         {
             if (PlayerDirection.FaceRight)
             {
@@ -38,13 +38,13 @@ public class ThrowWeapon : MonoBehaviour
                 sr.flipX = true;
                 projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
             }
-        }
+        }*/
         //Firing mechanism for the Axe(Right then left)(button P)
         if(Input.GetButtonDown("Fire2"))
         {
             if (PlayerDirection.FaceRight)
             {
-                StartLocation = new Vector3(transform.position.x + .5f, transform.position.y, 0);
+                StartLocation = new Vector3(transform.position.x, transform.position.y, 0);
                 if (tornadocount < maxtornadocount)
                 {
                     GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
@@ -54,7 +54,7 @@ public class ThrowWeapon : MonoBehaviour
             }
             else
             {
-                StartLocation = new Vector3(transform.position.x - .5f, transform.position.y, 0);
+                StartLocation = new Vector3(transform.position.x, transform.position.y, 0);
                 if (tornadocount < maxtornadocount)
                 {
                     GameObject projectile = Instantiate(ThrowingWeapon2, StartLocation, Quaternion.identity);
