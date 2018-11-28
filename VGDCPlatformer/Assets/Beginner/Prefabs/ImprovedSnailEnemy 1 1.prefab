@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 70770948855896616}
   - component: {fileID: 114655091240699908}
   - component: {fileID: 114275149707897304}
+  - component: {fileID: 70712734162789636}
   m_Layer: 8
   m_Name: slimeHitBox
   m_TagString: hitbox
@@ -133,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1709891588544816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.98, y: -0.8, z: 0.01171875}
+  m_LocalPosition: {x: 0.85, y: 0.01, z: 0.01171875}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4948418446501362}
@@ -148,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018386786438144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.629, y: 12.138946, z: -0.234375}
+  m_LocalPosition: {x: -51.85, y: -2.5162039, z: -0.1605919}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4831009136457486}
@@ -164,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1642119734235676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -1.22, z: 0.01171875}
+  m_LocalPosition: {x: -6.34, y: -1.22, z: 0.01171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4722872977119718}
@@ -177,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025187425621326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.98, y: -1.17, z: 0.01171875}
+  m_LocalPosition: {x: 6.3, y: -1.17, z: 0.01171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4722872977119718}
@@ -254,13 +255,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1709891588544816}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
+  m_Material: {fileID: 6200000, guid: b2923f5c6fc1bc748b16f0aa07b9ede0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.022278786, y: -0.025706261}
+  m_Offset: {x: 0.022278786, y: -0.019286126}
   serializedVersion: 2
-  m_Radius: 0.13258031
+  m_Radius: 0.12616017
 --- !u!61 &61210260307468824
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -301,7 +302,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1.0887293, y: -0.08329177}
   m_Size: {x: 4.0956936, y: 1.0167464}
   m_Direction: 1
---- !u!70 &70770948855896616
+--- !u!70 &70712734162789636
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,6 +311,21 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.021431088, y: -0.14573081}
+  m_Size: {x: 0.2771379, y: 0.0456835}
+  m_Direction: 1
+--- !u!70 &70770948855896616
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709891588544816}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b2923f5c6fc1bc748b16f0aa07b9ede0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -386,8 +402,7 @@ MonoBehaviour:
   P_Layer:
     serializedVersion: 2
     m_Bits: 1024
-  ThrowingWeapon: {fileID: 1621398608227490, guid: 40a07d6c80b40624d80eeeb3d8e1ddb1,
-    type: 2}
+  ThrowingWeapon: {fileID: 0}
   ThrowingWeapon2: {fileID: 0}
   Limit: 20
 --- !u!212 &212832762429221996
