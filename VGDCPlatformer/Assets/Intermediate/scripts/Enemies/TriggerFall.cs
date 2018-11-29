@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerFall : MonoBehaviour {
-
+public class TriggerFall : MonoBehaviour
+{
+    public float destroyTime = 5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +15,7 @@ public class TriggerFall : MonoBehaviour {
             Rigidbody2D rb = gameObject.GetComponentInChildren<Rigidbody2D>();
             //Debug.Log(rb.name);
             rb.isKinematic = false; //changing Body Type to Dynamic to allow gravity
+            Destroy(gameObject, destroyTime);
         }
     }
 }
