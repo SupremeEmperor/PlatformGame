@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectName: PlayerSpriteNew
-  tornadoduration: 2
+  tornadoduration: 3
   tornado: {fileID: 1197485495452686}
 --- !u!198 &198379037333841748
 ParticleSystem:
