@@ -5,13 +5,16 @@ using UnityEngine;
 public class Freeze : MonoBehaviour
 {
     public GameObject Player;
-    public float freezetime = 5;
+    public float freezetime = 5f;
     public Animator anim;
+    private Moving movingscript;
+    private ThrowWeapon throwingscript;
 
     // Use this for initialization
     void Start()
     {
-
+        movingscript = GameObject.Find("PlayerSpriteNew").GetComponent<Moving>();
+        throwingscript = GameObject.Find("PlayerSpriteNew").GetComponent<ThrowWeapon>();
     }
 
     // Update is called once per frame
@@ -23,9 +26,11 @@ public class Freeze : MonoBehaviour
     IEnumerator Frozen()
     {
         anim.SetBool("frozen", true);
-        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        yield return new WaitForSecondsRealtime(5f);
+        movingscript.enabled = false;
+        throwingscript.enabled = false;
+        yield return new WaitForSecondsRealtime(freezetime);
         anim.SetBool("frozen", false);
-        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        movingscript.enabled = true;
+        throwingscript.enabled = true;
     }
 }
