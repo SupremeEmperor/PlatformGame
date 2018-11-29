@@ -4953,7 +4953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: 83}
+  m_AnchoredPosition: {x: -222, y: 83}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772692937
@@ -4988,7 +4988,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Designer: Luke, Victor\n\nProgrammer: Andy, Daniel, \nKevin, Rigel"
+  m_Text: "Designers: \n   Luke\n   Victor\nProgrammers:\n   Andy\n   Kevin\n   Rigel"
 --- !u!222 &772692938
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5258,8 +5258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -173, y: -133}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -173, y: -140.7}
+  m_SizeDelta: {x: 130, y: 115.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1455335585
 Animator:
