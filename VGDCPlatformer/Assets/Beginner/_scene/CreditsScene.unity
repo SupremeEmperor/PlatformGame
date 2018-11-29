@@ -182,8 +182,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64949711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2364, y: 1.2364, z: 1.2364}
+  m_LocalPosition: {x: 0.12, y: 0, z: 0}
+  m_LocalScale: {x: 3.99147, y: 1.2364, z: 1.2364}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4976,11 +4976,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3959ec138bd72fa49ab3083b7ff37ad3, type: 3}
-    m_FontSize: 60
+    m_Font: {fileID: 12800000, guid: d812b04b79729d04bb32e752b7fdd211, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 2
     m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
