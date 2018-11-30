@@ -38,7 +38,7 @@ GameObject:
   m_Layer: 1
   m_Name: PositionA
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70,7 +70,7 @@ GameObject:
   m_Layer: 1
   m_Name: PositionB
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97,36 +97,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1756998917695412
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4112654132264324}
-  - component: {fileID: 70117914575297450}
-  - component: {fileID: 114907054801187314}
-  m_Layer: 1
-  m_Name: EnemyVision
-  m_TagString: hitbox
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4112654132264324
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1756998917695412}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18249989, y: -0.01999998, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4582952819684112}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4582952819684112
 Transform:
   m_ObjectHideFlags: 1
@@ -138,7 +108,6 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4948418446501362}
-  - {fileID: 4112654132264324}
   m_Father: {fileID: 4722872977119718}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018386786438144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.85, y: -2.5162039, z: -0.1605919}
+  m_LocalPosition: {x: 42.507298, y: -13.232713, z: -0.1605919}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4831009136457486}
@@ -255,7 +224,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1709891588544816}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b2923f5c6fc1bc748b16f0aa07b9ede0, type: 2}
+  m_Material: {fileID: 6200000, guid: 9b7cd9182dabe7d4bac8701848cd92cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -287,21 +256,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3997345, y: 1.1287053}
   m_EdgeRadius: 0
---- !u!70 &70117914575297450
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1756998917695412}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 492814ef38d71f547ad485d9f7d98022, type: 2}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.0887293, y: -0.08329177}
-  m_Size: {x: 4.0956936, y: 1.0167464}
-  m_Direction: 1
 --- !u!70 &70712734162789636
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -325,7 +279,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1709891588544816}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b2923f5c6fc1bc748b16f0aa07b9ede0, type: 2}
+  m_Material: {fileID: 6200000, guid: 9b7cd9182dabe7d4bac8701848cd92cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -387,24 +341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   ObjectRigidBody: {fileID: 50522791007131922}
---- !u!114 &114907054801187314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1756998917695412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d421632adbb6eb459704127fc6b81db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Direction: {fileID: 114275149707897304}
-  P_Layer:
-    serializedVersion: 2
-    m_Bits: 1024
-  ThrowingWeapon: {fileID: 0}
-  ThrowingWeapon2: {fileID: 0}
-  Limit: 20
 --- !u!212 &212832762429221996
 SpriteRenderer:
   m_ObjectHideFlags: 1
