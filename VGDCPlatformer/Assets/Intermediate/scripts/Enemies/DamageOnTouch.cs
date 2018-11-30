@@ -41,5 +41,16 @@ public class DamageOnTouch : MonoBehaviour
                 }
             }
         }
+        if (other.gameObject.tag == "Player")
+        {
+            try
+            {
+                other.GetComponent<Freeze>().StartCoroutine("Frozen");
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
