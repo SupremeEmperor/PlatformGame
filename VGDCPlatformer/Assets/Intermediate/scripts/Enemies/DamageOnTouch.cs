@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DamageOnTouch : MonoBehaviour
 {
+    public GameObject fullIcicle;
     public GameObject dangerzone;
- 
+    private AudioSource freezeSound;
 
     // Use this for initialization
     void Start()
@@ -45,7 +46,10 @@ public class DamageOnTouch : MonoBehaviour
         {
             try
             {
+                freezeSound = fullIcicle.GetComponent<AudioSource>();
+                freezeSound.Play();
                 other.GetComponent<Freeze>().StartCoroutine("Frozen");
+
             }
             catch
             {

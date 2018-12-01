@@ -5,6 +5,7 @@ using UnityEngine;
 public class FreezeOnContact: MonoBehaviour
 {
     public GameObject IceSpike;
+    private AudioSource freezeSound;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +25,8 @@ public class FreezeOnContact: MonoBehaviour
         {
             try
             {
+                freezeSound = GetComponent<AudioSource>();
+                freezeSound.Play();
                 other.GetComponent<Freeze>().StartCoroutine("Frozen");
                 Destroy(IceSpike, 2f);
             }

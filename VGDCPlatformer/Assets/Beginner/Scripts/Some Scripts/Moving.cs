@@ -16,7 +16,7 @@ public class Moving : MonoBehaviour
     public bool FaceRight;
     public int numJumps;
     private bool isGrounded;
-
+    private AudioSource jumpSound;
     //=======================Dashing==================
     //variables for dashing, you can set the time for how long the dash will last and how far
     private int direction;
@@ -28,6 +28,7 @@ public class Moving : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        jumpSound = GetComponent<AudioSource>();
         FaceRight = true;
         //PlayerBox = GetComponent<BoxCollider2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -83,12 +84,14 @@ public class Moving : MonoBehaviour
             if (isGrounded)
             {
                 //anim.SetBool("jumping", true);
+                jumpSound.Play();
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
             }
             else if (/*IsGrounded()*/numJumps > 0)
             {
                 anim.SetBool("jumping", true);
+                jumpSound.Play();
                 m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
                 m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
                 numJumps -= 1;

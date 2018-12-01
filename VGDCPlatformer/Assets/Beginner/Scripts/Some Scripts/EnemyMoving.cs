@@ -28,6 +28,7 @@ public class EnemyMoving : MonoBehaviour
     private float leftflip;
     private float rightflip;
     public bool stopMove = false;
+    private AudioSource bounceSound;
 
 
     // Use this for initialization
@@ -103,4 +104,12 @@ public class EnemyMoving : MonoBehaviour
         transform.localScale = localScale;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            bounceSound = GetComponent<AudioSource>();
+            bounceSound.Play();
+        }
+    }
 }
