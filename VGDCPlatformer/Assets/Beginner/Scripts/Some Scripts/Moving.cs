@@ -24,6 +24,7 @@ public class Moving : MonoBehaviour
     public float startDashTime;
     public float dashForce;
     public bool isDashing;
+    public float HorizontalInput;
 
     // Use this for initialization
     void Start()
@@ -44,7 +45,7 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float HorizontalInput = Input.GetAxisRaw("Horizontal");
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
         if (HorizontalInput != 0)
         {
             //This flips the player model depending on the direction they are going
