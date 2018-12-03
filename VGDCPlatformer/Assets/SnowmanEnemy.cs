@@ -14,26 +14,69 @@ public class SnowmanEnemy : MonoBehaviour
     private float horiz;
 
     public Moving thePlayer;
-    private bool isTargeting;
+    public TriggerEvent booleanCheck;
     public float spawnHeight;
     public float lead;
     private float holdLead;
     public GameObject icicles;
+    public Collider2D aggroArea;
+    private Vector2 minWalkPoint;
+    private Vector2 maxWalkPoint;
+    public bool isChasing;
+    
     // Use this for initialization
     void Start()
     {
         holdLead = lead;
         faceRight = false;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        minWalkPoint = aggroArea.bounds.min;
+        maxWalkPoint = aggroArea.bounds.max;
+        isChasing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+        if (transform.position.x > maxWalkPoint.x || transform.position.x < minWalkPoint.x)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            isChasing = false;
         }
+        else
+        {
+            isChasing = true;
+        }
+
+        if(isChasing && booleanCheck.inBounds)
+        {
+            if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (thePlayer.HorizontalMove != 0)
+                {
+                    if (thePlayer.FaceRight)
+                    {
+                        lead = target.position.x + lead;
+                    }
+                    else if (!thePlayer.FaceRight)
+                    {
+                        lead = target.position.x - lead;
+                    }
+                    Instantiate(icicles, new Vector2(lead, target.position.y + spawnHeight), Quaternion.identity);
+                    lead = holdLead;
+                }
+                else
+                {
+                    Instantiate(icicles, new Vector2(target.position.x, target.position.y + spawnHeight), Quaternion.identity);
+                }
+            }
+        }
+        
     }
 
     void Flip()
@@ -46,26 +89,7 @@ public class SnowmanEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-         if (Input.GetKeyDown(KeyCode.R))//isTargeting)
-         {
-            if (thePlayer.HorizontalMove != 0)
-            {
-                if (thePlayer.FaceRight)
-                {
-                    lead = target.position.x + lead;
-                }
-                else if (!thePlayer.FaceRight)
-                {
-                    lead = target.position.x - lead;
-                }
-                Instantiate(icicles, new Vector2(lead, target.position.y + spawnHeight), Quaternion.identity);
-                lead = holdLead;
-            }
-            else
-            {
-                Instantiate(icicles, new Vector2(target.position.x, target.position.y + spawnHeight), Quaternion.identity);
-            }
-        }
+         
 
 
         if (transform.position.x > target.position.x && faceRight)
