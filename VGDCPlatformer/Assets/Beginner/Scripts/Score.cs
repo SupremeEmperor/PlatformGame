@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour {
 
@@ -15,7 +16,8 @@ public class Score : MonoBehaviour {
             timerCount -= pointsPerSecond * Time.deltaTime; 
         } else
         {
-            Destroy(GameObject.Find("PlayerSpriteNew"));
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
 
         string minutes = Mathf.Floor(timerCount / 60).ToString("00");
