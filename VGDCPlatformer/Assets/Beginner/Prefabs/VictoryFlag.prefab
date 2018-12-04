@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795683312087586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 114.83, y: 79.46, z: -0.111328125}
+  m_LocalPosition: {x: 114.83, y: 79.56, z: -0.111328125}
   m_LocalScale: {x: 1.801, y: 1.801, z: 1.801}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7a100012443194b9a572d22e2dc480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MenuScene
+  levelName: Level Select
 --- !u!212 &212857077830604498
 SpriteRenderer:
   m_ObjectHideFlags: 1
