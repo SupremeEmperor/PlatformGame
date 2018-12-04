@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  stopThingsWhenPaused: 0
 --- !u!1 &690992939
 GameObject:
   m_ObjectHideFlags: 0
@@ -5085,9 +5086,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Designers: \n   Luke Miller\n   Victor Zhou\nProgrammers:\n   Andy Kuei\n
-    \  Kevin \n   Rigel Kuper\nArt and Music:\n   Art from UCI ArtStrike\n   BGM from
-    https://www.zapsplat.com\n   Bounce and Freeze SFX by JustInvoke\n   Jump SFX
-    by breviceps"
+    \  Kevin Touch\n   Rigel Kuper\nArt and Music:\n   Art from UCI ArtStrike\n   BGM
+    from https://www.zapsplat.com\n   Bounce and Freeze SFX by JustInvoke\n   Jump
+    SFX by breviceps"
 --- !u!222 &772692938
 CanvasRenderer:
   m_ObjectHideFlags: 0
