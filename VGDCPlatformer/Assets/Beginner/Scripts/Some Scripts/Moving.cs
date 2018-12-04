@@ -26,6 +26,8 @@ public class Moving : MonoBehaviour
     public bool isDashing;
     public float HorizontalInput;
 
+    public SceneManagement pauseInteraction;
+
     // Use this for initialization
     void Start()
     {
@@ -77,33 +79,37 @@ public class Moving : MonoBehaviour
             anim.SetBool("jumping", true);
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (!pauseInteraction.stopThingsWhenPaused)
         {
-            //Double jump works by having a variable that counts down everytime the player jumps. 
-            //If you have a better method, go ahead and implement it.
-            //Ground check via raycast
-            if (isGrounded)
+            if (Input.GetButtonDown("Jump"))
             {
-                //anim.SetBool("jumping", true);
-                jumpSound.Play();
-                m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+                //Double jump works by having a variable that counts down everytime the player jumps. 
+                //If you have a better method, go ahead and implement it.
+                //Ground check via raycast
+                if (isGrounded)
+                {
+                    //anim.SetBool("jumping", true);
+                    jumpSound.Play();
+                    m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
+                    m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+                }
+                else if (/*IsGrounded()*/numJumps > 0)
+                {
+                    anim.SetBool("jumping", true);
+                    jumpSound.Play();
+                    m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
+                    m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
+                    numJumps -= 1;
+                }
             }
-            else if (/*IsGrounded()*/numJumps > 0)
+            else if (isGrounded)
             {
-                anim.SetBool("jumping", true);
-                jumpSound.Play();
-                m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, 0);
-                m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce * 3 / 4));
-                numJumps -= 1;
+                //This causes the jumping animation to stop
+                anim.SetBool("jumping", false);
+                numJumps = 1;
             }
         }
-        else if (isGrounded)
-        {
-            //This causes the jumping animation to stop
-            anim.SetBool("jumping", false);
-            numJumps = 1;
-        }
+        
     }
     void FixedUpdate()
     {

@@ -8,6 +8,8 @@ public class SceneManagement : MonoBehaviour {
     private static bool isPaused;
     public GameObject pauseMenu;
 
+    public bool stopThingsWhenPaused;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -86,11 +88,13 @@ public class SceneManagement : MonoBehaviour {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        stopThingsWhenPaused = false;
     }
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        stopThingsWhenPaused = true;
     }
 }
