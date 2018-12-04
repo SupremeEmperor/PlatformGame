@@ -23,6 +23,8 @@ public class SnowmanEnemy : MonoBehaviour
     private Vector2 minWalkPoint;
     private Vector2 maxWalkPoint;
     public bool isChasing;
+    public float coolDown;
+    private float timeStamp;
     
     // Use this for initialization
     void Start()
@@ -34,6 +36,8 @@ public class SnowmanEnemy : MonoBehaviour
         minWalkPoint = aggroArea.bounds.min;
         maxWalkPoint = aggroArea.bounds.max;
         isChasing = false;
+
+        timeStamp = 0;
     }
 
     // Update is called once per frame
@@ -48,32 +52,35 @@ public class SnowmanEnemy : MonoBehaviour
             isChasing = true;
         }
 
-        if(isChasing && booleanCheck.inBounds)
+        
+
+        if (timeStamp <= Time.time && booleanCheck.inBounds)
+        {
+            timeStamp = Time.time + coolDown;
+            if (thePlayer.HorizontalMove != 0)
+            {
+                if (thePlayer.FaceRight)
+                {
+                    lead = target.position.x + lead;
+                }
+                else if (!thePlayer.FaceRight)
+                {
+                    lead = target.position.x - lead;
+                }
+                Instantiate(icicles, new Vector2(lead, target.position.y + spawnHeight), Quaternion.identity);
+                lead = holdLead;
+            }
+            else
+            {
+                Instantiate(icicles, new Vector2(target.position.x, target.position.y + spawnHeight), Quaternion.identity);
+            }
+        }
+
+        if (isChasing && booleanCheck.inBounds)
         {
             if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            }
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                if (thePlayer.HorizontalMove != 0)
-                {
-                    if (thePlayer.FaceRight)
-                    {
-                        lead = target.position.x + lead;
-                    }
-                    else if (!thePlayer.FaceRight)
-                    {
-                        lead = target.position.x - lead;
-                    }
-                    Instantiate(icicles, new Vector2(lead, target.position.y + spawnHeight), Quaternion.identity);
-                    lead = holdLead;
-                }
-                else
-                {
-                    Instantiate(icicles, new Vector2(target.position.x, target.position.y + spawnHeight), Quaternion.identity);
-                }
             }
         }
         

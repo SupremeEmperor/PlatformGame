@@ -10,6 +10,7 @@ TagManager:
   - environment
   - checkPoint
   - Gizmos
+  - Range
   layers:
   - Default
   - TransparentFX
