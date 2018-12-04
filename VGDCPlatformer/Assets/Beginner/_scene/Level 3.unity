@@ -48212,6 +48212,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.066002}
+--- !u!114 &1261633629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114014955470087028, guid: 8089abbe8f2754243b36e98f4af80596,
+    type: 2}
+  m_PrefabInternal: {fileID: 354065159}
+  m_Script: {fileID: 11500000, guid: 247b45bb92312b74da87f48441ae17a1, type: 3}
 --- !u!1 &1269014679
 GameObject:
   m_ObjectHideFlags: 0
@@ -49787,6 +49793,11 @@ Prefab:
       propertyPath: RespawnPointx
       value: 
       objectReference: {fileID: 1732267318}
+    - target: {fileID: 114232621544013096, guid: 73287ea91844ea0448d5ef4808f48ff2,
+        type: 2}
+      propertyPath: pauseInteraction
+      value: 
+      objectReference: {fileID: 1261633629}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73287ea91844ea0448d5ef4808f48ff2, type: 2}
   m_IsPrefabAsset: 0
